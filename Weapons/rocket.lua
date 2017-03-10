@@ -6,9 +6,9 @@ weaponType=[[MissileLauncher]],
 Accuracy=2000,
 
 --Physic/flight path
-range=800,
+range=1800,
 reloadtime=2,
-weaponVelocity=1000,
+weaponVelocity=2000,
 startVelocity=250,
 weaponAcceleration=200,
 flightTime=2.5,

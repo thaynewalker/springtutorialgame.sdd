@@ -2,7 +2,7 @@ local unitName = "attackvehiclerocket"
 
 local unitDef = {
 name = "Rocker",
-Description = "fires a rocket",
+description = "SAM",
 objectName = "simpleattackvehicle.s3o",
 script = "simpleattackvehicle.lua",
 buildPic = "placeholder.png",
@@ -27,9 +27,18 @@ canHover = true,
 TurnRate = 900,
 
 sightDistance = 1000,
+radarDistance = 1200,
+radarObservability = 0.95,
+infraredSensor = true,
+radarSensor = true,
+radarSensitivity = 0.95,
+infraredSensitivity = 0.95,
+rcs = 0.95,
 
 Category = [[LAND]],
 
+activateWhenBuilt = false,
+onoffable = true,
 Builder = false,
 CanAttack = true,
 CanGuard = true,

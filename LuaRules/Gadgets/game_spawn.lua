@@ -13,6 +13,7 @@
 --
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
+local startConfig = VFS.Include("LuaRules/Gadgets/start_config.lua")
 
 function gadget:GetInfo()
 	return {
@@ -57,6 +58,7 @@ local function GetStartUnit(teamID)
 end
 
 local function SpawnStartUnit(teamID)
+        print("SPAWN START UNIT")
 	local startUnit = GetStartUnit(teamID)
 	if (startUnit and startUnit ~= "") then
 		-- spawn the specified start unit
@@ -68,7 +70,10 @@ local function SpawnStartUnit(teamID)
 		local facing=math.abs(Game.mapSizeX/2 - x) > math.abs(Game.mapSizeZ/2 - z)
 			and ((x>Game.mapSizeX/2) and "west" or "east")
 			or ((z>Game.mapSizeZ/2) and "north" or "south")
-		local unitID = Spring.CreateUnit(startUnit, x, y, z, facing, teamID)
+                for i=1, #startConfig[startUnit] do
+                  print ("SPAWN "..startConfig[startUnit][i]["name"].." at "..startConfig[startUnit][i]["x"]+x..","..startConfig[startUnit][i]["z"]+z)
+                  local unitID = Spring.CreateUnit(startConfig[startUnit][i]["name"], startConfig[startUnit][i]["x"]+x, startConfig[startUnit][i]["y"], startConfig[startUnit][i]["z"]+z, facing, teamID)
+                end
 	end
 
 	-- set start resources, either from mod options or custom team keys
@@ -98,6 +103,7 @@ end
 
 
 function gadget:GameStart()
+        print("GAME START")
 	-- only activate if engine didn't already spawn units (compatibility)
 	if (#Spring.GetAllUnits() > 0) then
 		return

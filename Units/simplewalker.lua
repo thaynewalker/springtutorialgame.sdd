@@ -35,7 +35,7 @@ CanPatrol = true,
 CanStop = true,
 LeaveTracks = false,
 weapons = {
-[1]={name  = "deathraylaser",
+[1]={name  = "MachineGun",
 	onlyTargetCategory = [[LAND]],
 	},
 },
