@@ -1,0 +1,106 @@
+[GAME]
+{
+	IsHost=1;
+	MyPlayerName=smap;
+
+	Mapname=DeltaSiegeDry;
+	GameType=STG;
+
+	startpostype=3;
+	[mapoptions]
+	{
+	}
+	[modoptions]
+	{
+		tpnomenu=1;
+		disablemapdamage=0;
+		fixedallies=0;
+		ghostedbuildings=1;
+		limitdgun=0;
+		maxspeed=3;
+		maxunits=500;
+		minspeed=0.3;
+		gamemode=0;
+	}
+	NumRestrictions=0;
+	[RESTRICT]
+	{
+	}
+
+	NumPlayers=1;
+	NumUsers=3;
+
+	[PLAYER2]
+	{
+		Name=smap;
+		Spectator=1;
+		Rank=2;
+		IsFromDemo=0;
+		Team=2;
+	}
+	[AI0]
+	{
+		Name=Bot1;
+		ShortName=Incumbent;
+		Version=dev;
+		Team=0;
+		IsFromDemo=0;
+		Host=2;
+		[Options]
+		{
+		}
+	}
+	[AI1]
+	{
+		Name=Bot2;
+		ShortName=Recon;
+		Version=dev;
+		Team=1;
+		IsFromDemo=0;
+		Host=2;
+	}
+
+	[TEAM0]
+	{
+		TeamLeader=2;
+		StartPosX=0;
+		StartPosZ=0;
+		AllyTeam=1;
+		RGBColor=0.976471 1 0;
+		Side=incumbent;
+		Handicap=0;
+	}
+	[TEAM1]
+	{
+		TeamLeader=2;
+		StartPosX=0;
+		StartPosZ=0;
+		AllyTeam=2;
+		RGBColor=0.509804 0.498039 1;
+		Side=recon;
+		Handicap=0;
+	}
+	[TEAM2]
+	{
+		TeamLeader=2;
+		StartPosX=0;
+		StartPosZ=0;
+		AllyTeam=0;
+		RGBColor=1 0 0;
+		Side=spectator;
+		Handicap=0;
+	}
+
+	[ALLYTEAM1]
+	{
+		NumAllies=0;
+	}
+	[ALLYTEAM2]
+	{
+		NumAllies=0;
+	}
+	[ALLYTEAM0]
+	{
+		NumAllies=0;
+	}
+}
